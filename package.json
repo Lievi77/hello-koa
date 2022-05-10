@@ -21,6 +21,7 @@
   "dependencies": {
     "@koa/router": "^10.1.1",
     "koa": "^2.13.4",
+    "koa-ejs": "^4.3.0",
     "nodemon": "^2.0.16"
   }
 }
