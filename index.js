@@ -67,6 +67,16 @@ router.get("error", "/error", (ctx) => {
   ctx.throw(500, "internal server error");
 });
 
+router.get("status", "/status", (ctx) => {
+  //example of setting responses in the context object
+  ctx.status = 200;
+  ctx.body = "ok";
+});
+
+// router.get("koa-example", "/", (ctx) => {
+//   ctx.body = "Hello World";
+// });
+
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(4000);
