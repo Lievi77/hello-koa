@@ -11,6 +11,17 @@ const path = require("path");
 const app = new Koa();
 const router = new Router();
 
+//error middleware
+app.use(async (ctx, next) => {
+  try {
+    await next();
+  } catch (err) {
+    console.log(err.status);
+    ctx.status = err.status || 500;
+    ctx.body = err.message;
+  }
+});
+
 render(app, {
   root: path.join(__dirname, "views"),
   layout: "index",
@@ -50,6 +61,10 @@ router.get("hello-koa", "/", (ctx) => {
   return ctx.render("index", {
     attributes: koalaFacts,
   });
+});
+
+router.get("error", "/error", (ctx) => {
+  ctx.throw(500, "internal server error");
 });
 
 app.use(router.routes()).use(router.allowedMethods());
