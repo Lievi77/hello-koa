@@ -1,0 +1,26 @@
+{
+  "name": "hello-koa",
+  "version": "1.0.0",
+  "description": "A simple, Hello World application built with Node.js and Koa",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lievi77/hello-koa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lievi77/hello-koa/issues"
+  },
+  "homepage": "https://github.com/Lievi77/hello-koa#readme",
+  "keywords": [],
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "koa": "^2.13.4",
+    "nodemon": "^2.0.16"
+  }
+}
